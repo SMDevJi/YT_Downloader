@@ -43,7 +43,7 @@ elif chk==2:
 	video.download()
 	print("   ")
 	print("Download Completed!")
-	print("Video/Audio Downloaded at Current Directory.")
+	print("Audio Downloaded at Current Directory.")
 	try:
 		a=(video.title+".webm")
 		b=(video.title+".mp3")
