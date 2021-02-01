@@ -81,6 +81,6 @@ elif chk==3:
 		print("Video/Audio Downloaded at Current Directory.")
 	except:
 		print("   ")
-		print("Error! The stream you chose seems to be an mp4 audio stream. Please manually change file extension to \".mp3\" if it\'s unplayable.")
+		print("Note: If you chose an audio stream, please manually rename the file and change extension to \".mp3\"")
 else:
 	print("You entered invalid option, please restart the program and enter a valid option")
