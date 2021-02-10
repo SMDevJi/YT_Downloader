@@ -1,9 +1,12 @@
+
 import os
 from pytube import YouTube
+from pytube.cli import on_progress
+print("   ")
 url=input("Enter Video\'s URL>>  ")
 print("   ")
 print("Fetching video details...")
-video=YouTube(url)
+video=YouTube(url,on_progress_callback=on_progress)
 print("   ")
 print("Enter 1, if you want to download video.    \nEnter 2, if you want to download only audio.     \nEnter 3, if you want to see list of all streams [this includes videos which don\'t have audio]")
 print("   ")
@@ -22,6 +25,7 @@ if chk==1:
 	itag=input("Enter itag>  ")
 	video=video.streams.get_by_itag(itag)
 	print(f"Downloading \"{video.title}\"")
+	print("   ")
 	video.download()
 	print("   ")
 	print("Download Completed!")
@@ -40,7 +44,9 @@ elif chk==2:
 	itag=input("Enter itag>  ")
 	video=video.streams.get_by_itag(itag)
 	print(f"Downloading \"{video.title}\"")
+	print("   ")
 	video.download()
+	print("   ")
 	print("   ")
 	print("Download Completed!")
 	print("Audio Downloaded at Current Directory.")
@@ -71,12 +77,14 @@ elif chk==3:
 	itag=input("Enter itag>  ")
 	video=video.streams.get_by_itag(itag)
 	print(f"Downloading \"{video.title}\"")
+	print("   ")
 	video.download()
 	print("   ")
 	try:
 		a=(video.title+".webm")
 		b=(video.title+".mp3")
 		os.rename(a,b)
+		print("   ")
 		print("Download Completed!")
 		print("Video/Audio Downloaded at Current Directory.")
 	except:
